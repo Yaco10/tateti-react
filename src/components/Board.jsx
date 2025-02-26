@@ -1,9 +1,10 @@
 import { useState } from "react";
 
-export function Board({ board, handleClick, reset }) {
+export function Board({ board, handleClick, reset, winner, winnerLine }) {
 
   return (
     <div className="board">
+      {winner && winnerLine && <div className={`winner-line ${winnerLine}`}></div>}
       {board.map((row, ejey) => {
         return row.map((cell, ejex) => {
           return (

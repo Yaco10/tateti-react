@@ -1,46 +1,69 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-*{
+
+* {
   font-family: 'Poppins', sans-serif;
 }
 
-body{
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+#root {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-#root{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.board{
-  height: 500px;
-  width: 500px;
+.board {
+  height: 60vh; /* Ajustado para mantener proporción */
+  width: 60vh;  /* Mantener cuadrado en base a altura */
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  gap: 10px;
+  gap: 2vh;
   position: relative;
 }
 
-.btn{
+.btn {
   font-weight: bold;
-  font-size: 30px;
+  font-size: 5vh;
   background-color: rgb(69, 75, 113);
   color: white;
   border-radius: 10%;
+}
+
+.winner-line{
+  position: absolute;
+  width: 55vh;
+  height: 2.5vh;
+  background-color: rgb(145, 130, 179);
+  border-radius: 10px;
+  z-index: 10;
+  
   
 }
 
+.row-0 { top: 13%; left: 4%; animation: slideIn linear}
+.row-1 { top: 48%; left: 4%;   animation: slideIn 1s linear}
+.row-2 { top: 83%; left: 4%;  animation: slideIn 1s linear }
 
+.col-0 { right: 82%; top: 4%; width: 2.5vh; height: 55vh; animation: slideInCol 1s linear}
+.col-1 { right: 48%; top: 4%;  width: 2.5vh; height: 55vh; animation: slideInCol 1s linear}
+.col-2 { right: 13%; top: 4%; width: 2.5vh; height: 55vh; animation: slideInCol 1s linear}
+
+.diag-main { top:49% ;left: -5%; transform: rotate(45deg); width: 67vh; animation: slideIn ease-in-out}
+.diag-sec  { top:48% ;left: -5%;transform: rotate(-45deg); width: 67vh; animation: slideIn ease-in-out}
 .winner-text{
   font-weight: bold;
   font-size: 30px;
-}
+} 
+
 
 .winners-text-container{
   display: flex;
@@ -51,3 +74,30 @@ body{
   margin: 12px;
 }
 
+
+@keyframes slideIn {
+  0% {
+    width: 0%;
+   
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+   width: 100%;
+  }
+}
+
+@keyframes slideInCol {
+  0% {
+    height: 0%;
+    /* Comienza invisible */
+  }
+  50% {
+    opacity: 0; /* En el medio de la animación, la línea se vuelve completamente visible */
+  }
+  100% {
+     height: 55vh;
+     /* Se mantiene visible al final */
+  }
+}
