@@ -37,7 +37,7 @@ export const useBoard = ({winsX, setWinsX, winsO, setWinsO}) => {
       setWinner(true);
       setWinnerLine(result.line);
       setTimeout(() => {
-        //reset();
+        reset();
       }, 1500);
     } else {
       setState((prevState) => (prevState === "X" ? "O" : "X"));

@@ -20,6 +20,12 @@ body {
   align-items: center;
 }
 
+.title-game {
+  font-weight: bold;
+  font-size: 6vh;
+  margin: 20px;
+}
+
 .board {
   height: 60vh; /* Ajustado para mantener proporción */
   width: 60vh;  /* Mantener cuadrado en base a altura */

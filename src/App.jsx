@@ -14,6 +14,7 @@ function App() {
 
   return (
     <>
+      <div className="title-game">TA TE TI</div>
      {winner && <div className="winner-text">Ganador: {state}</div>}
       <Board
          board={board}
